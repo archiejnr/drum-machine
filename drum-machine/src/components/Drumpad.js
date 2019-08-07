@@ -6,7 +6,7 @@ function Drumpad(props){
   return(
     <Container>
       <Row>
-        <Drumkeys keys={props.keys}/>
+        <Drumkeys keys={props.keys} press={props.press} release={props.release}/>
       </Row>
     </Container>
   )

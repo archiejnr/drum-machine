@@ -7,6 +7,9 @@
 #drum{
   display:inline-block;
 }
-.cornerKey{
-  border-top-left-radius:60%;
+/*continue from making the design for the layout of the app*/
+.topLeft{
+  border-top-left-radius:60%
 }
+.topRight{}
+.topCenter{}
