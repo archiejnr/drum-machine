@@ -3,9 +3,6 @@ import './App.css';
 import Drumpad from './components/Drumpad.js';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-
-
-
 //code starts here
 
 class App extends React.Component{
@@ -34,7 +31,7 @@ class App extends React.Component{
 
 
   render(){
-    return(<div id="drum" ><Drumpad keys={this.state.keys} className="row"/></div>)
+    return(<div id="drum" ><Drumpad keys={this.state.keys}/></div>)
   }
 }
 

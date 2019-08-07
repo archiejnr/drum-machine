@@ -1,11 +1,15 @@
+import {Container,Row} from 'reactstrap';
 import React from 'react';
-import '../App.css';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import Drumkeys from './Drumkeys.js';
 
 function Drumpad(props){
-    let arr=props.keys;
-    console.log(arr)
-  return (props.keys.map((item)=>(<div key={item.id} className='drumKey col-lg-4'>{item.key}</div>)))
+  return(
+    <Container>
+      <Row>
+        <Drumkeys keys={props.keys}/>
+      </Row>
+    </Container>
+  )
 }
 
 
@@ -22,6 +26,4 @@ function Drumpad(props){
 
 
 
-
-
-export default Drumpad;
+export default Drumpad
