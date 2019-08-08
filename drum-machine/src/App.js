@@ -27,6 +27,42 @@ class App extends React.Component{
         src:"somthing",
         presed:false,
         position:'topRight'
+      },{
+        id:4,
+        key:"A",
+        src:"somthing",
+        presed:false,
+        position:'midLeft'
+      },{
+        id:5,
+        key:"S",
+        src:"somthing",
+        presed:false,
+        position:'midCenter'
+      },{
+        id:6,
+        key:"D",
+        src:"somthing",
+        presed:false,
+        position:'midRight'
+      },{
+        id:7,
+        key:"Z",
+        src:"somthing",
+        presed:false,
+        position:'bottomLeft'
+      },{
+        id:8,
+        key:"X",
+        src:"somthing",
+        presed:false,
+        position:'bottomCenter'
+      },{
+        id:9,
+        key:"c",
+        src:"somthing",
+        presed:false,
+        position:'bottomRight'
       }]
     }
 

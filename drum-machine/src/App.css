@@ -3,9 +3,19 @@
   height:100px;
   background:skyblue;
   text-align:center;
+  padding:1.9em;
+  cursor: pointer;
+  font-weight: bold;
+  font-family: monospace;
+}
+.drumKey:active{
+  background-color:#00ff00;
 }
 #drum{
   display:inline-block;
+  position:absolute;
+  left:5%;
+  top:10%;
 }
 /*continue from making the design for the layout of the app*/
 .topLeft{

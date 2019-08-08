@@ -8,6 +8,7 @@ function Drumkeys(props){
     console.log(arr)
   return (props.keys.map((item)=>(<Col
                                       key={item.id}
+                                      xs='3'
                                       className='drumKey'
                                       id={item.position}
                                       onMouseDown={props.press}
