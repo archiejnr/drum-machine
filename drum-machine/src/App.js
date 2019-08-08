@@ -15,65 +15,72 @@ class App extends React.Component{
         key:"Q",
         src:"somthing",
         presed:false,
-        position:'topLeft'
+        position:'topLeft',
+        url:'https://s3.amazonaws.com/freecodecamp/drums/Heater-4_1.mp3'
       },{
         id:2,
         key:"W",
         src:"somthing",
         presed:false,
-        position:'topCenter'
+        position:'topCenter',
+        url:'http://www.betamonkeymusic.com/AltDrums/Alt%20and%20Modern%20Rock%20I%20Samples/fill_10%20180%20BPM.wav'
       },{
         id:3,
         key:"E",
         src:"somthing",
         presed:false,
-        position:'topRight'
+        position:'topRight',
+        url:'http://www.apo33.org/pub/puredata/APO/librairies_PD/recup/groover/sound/606bass.wav'
       },{
         id:4,
         key:"A",
         src:"somthing",
         presed:false,
-        position:'midLeft'
+        position:'midLeft',
+        url:'http://dight310.byu.edu/media/audio/FreeLoops.com/2/2/Dirty%20South%20Kick%2003-3633-Free-Loops.com.mp3'
       },{
         id:5,
         key:"S",
         src:"somthing",
         presed:false,
-        position:'midCenter'
+        position:'midCenter',
+        url:'http://www.denhaku.com/r_box/sr16/sr16sd/sprpicrm.wav'
       },{
         id:6,
         key:"D",
         src:"somthing",
         presed:false,
-        position:'midRight'
+        position:'midRight',
+        url:'http://dight310.byu.edu/media/audio/FreeLoops.com/5/5/Piccolo%20Snare-14385-Free-Loops.com.mp3'
       },{
         id:7,
         key:"Z",
         src:"somthing",
         presed:false,
-        position:'bottomLeft'
+        position:'bottomLeft',
+        url:'http://www.denhaku.com/r_box/sr16/sr16bd/purekick.wav'
       },{
         id:8,
         key:"X",
         src:"somthing",
         presed:false,
-        position:'bottomCenter'
+        position:'bottomCenter',
+        url:'http://dight310.byu.edu/media/audio/FreeLoops.com/5/5/Lil%20Jon%20Sub%20and%20Kick-8238-Free-Loops.com.mp3'
       },{
         id:9,
         key:"c",
         src:"somthing",
         presed:false,
-        position:'bottomRight'
+        position:'bottomRight',
+        url:'http://s1download-universal-soundbank.com/mp3/sounds/14151.mp3'
       }]
     }
-
-    this.handlePress=this.handlePress.bind(this);
     this.handleRelease=this.handleRelease.bind(this);
   }
 
-handlePress(){
-
-    console.log('button pressed')
+playSound=(e)=>{
+    const sound=new Audio(e.target.getAttribute('audio'));
+    sound.play();
 }
 handleRelease(){
 
@@ -82,7 +89,7 @@ handleRelease(){
   render(){
     return(<div>
               <div id="drum" >
-                  <Drumpad keys={this.state.keys} press={this.handlePress} release={this.handleRelease}/>
+                  <Drumpad keys={this.state.keys} press={this.playSound} release={this.handleRelease}/>
               </div>
               <div id="slider">
                   <Slider/>

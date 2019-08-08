@@ -7,12 +7,12 @@ function Drumkeys(props){
     let arr=props.keys;
     console.log(arr)
   return (props.keys.map((item)=>(<Col
+                                      audio={item.url}
                                       key={item.id}
                                       xs='3'
                                       className='drumKey'
                                       id={item.position}
-                                      onMouseDown={props.press}
-                                      onMouseLeave={props.release}
+                                      onClick={props.press}
                                       style={{border:'1px solid grey',
                                               borderRadius:'10px',
                                               margin:'2px',
