@@ -11,19 +11,4 @@ function Drumpad(props){
     </Container>
   )
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 export default Drumpad

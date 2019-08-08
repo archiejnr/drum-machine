@@ -4,9 +4,7 @@ import Drumpad from './components/Drumpad.js';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Slider from './components/Slider.js';
 import Display from './components/Display.js';
-
 //code starts here
-
 class App extends React.Component{
   constructor(props){
     super(props);
@@ -79,13 +77,11 @@ class App extends React.Component{
     }
 //if there are any bindings to be done provided you ddnt use the arrow functions
   }
-
 playSound=(e)=>{
     const sound=new Audio(e.target.getAttribute('audio'));
     sound.play();
     this.displayKey(e)
 }
-
 displayKey=(e)=>{
   this.setState({
     displayedKey:e.target.getAttribute('id')
