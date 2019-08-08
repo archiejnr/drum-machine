@@ -15,7 +15,7 @@
   display:inline-block;
   position:absolute;
   left:5%;
-  top:10%;
+  top:15%;
 }
 /*continue from making the design for the layout of the app*/
 .topLeft{
@@ -23,6 +23,7 @@
 }
 .topRight{}
 .topCenter{}
+
 .slider{
       -webkit-transform: rotate(90deg);
       -moz-transform: rotate(90deg);
@@ -31,7 +32,14 @@
       transform: rotate(270deg);
       position:relative;
       left:75%;
-      top:210px;
+      top:250px;
       width:310px;
       color:#00ff00;
+}
+#display{
+  width:100%;
+  height:50px;
+  text-align: center;
+  background:rgb(153, 99, 238);
+  padding-top:10px;
 }

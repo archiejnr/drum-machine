@@ -3,9 +3,7 @@ import '../App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {Col} from 'reactstrap';
 
-function Drumkeys(props){
-    let arr=props.keys;
-    console.log(arr)
+function Drumkeys(props){  
   return (props.keys.map((item)=>(<Col
                                       audio={item.url}
                                       key={item.id}

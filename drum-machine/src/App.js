@@ -2,7 +2,8 @@ import React from 'react';
 import './App.css';
 import Drumpad from './components/Drumpad.js';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Slider from './components/Slider.js'
+import Slider from './components/Slider.js';
+import Display from './components/Display.js';
 
 //code starts here
 
@@ -73,29 +74,35 @@ class App extends React.Component{
         presed:false,
         position:'bottomRight',
         url:'http://s1download-universal-soundbank.com/mp3/sounds/14151.mp3'
-      }]
+      }],
+      displayedKey:null
     }
-    this.handleRelease=this.handleRelease.bind(this);
+//if there are any bindings to be done provided you ddnt use the arrow functions
   }
 
 playSound=(e)=>{
     const sound=new Audio(e.target.getAttribute('audio'));
     sound.play();
+    this.displayKey(e)
 }
-handleRelease(){
 
-  console.log('mouse released')
+displayKey=(e)=>{
+  this.setState({
+    displayedKey:e.target.getAttribute('id')
+  })
 }
   render(){
     return(<div>
               <div id="drum" >
-                  <Drumpad keys={this.state.keys} press={this.playSound} release={this.handleRelease}/>
+                  <Drumpad keys={this.state.keys} press={this.playSound}/>
               </div>
               <div id="slider">
                   <Slider/>
               </div>
+              <div id="display">
+                <Display value={this.state.displayedKey}/>
+              </div>
             </div>)
   }
 }
-
 export default App;
