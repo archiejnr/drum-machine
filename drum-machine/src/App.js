@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import Drumpad from './components/Drumpad.js';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Slider from './components/Slider.js'
 
 //code starts here
 
@@ -79,7 +80,14 @@ handleRelease(){
   console.log('mouse released')
 }
   render(){
-    return(<div id="drum" ><Drumpad keys={this.state.keys} press={this.handlePress} release={this.handleRelease}/></div>)
+    return(<div>
+              <div id="drum" >
+                  <Drumpad keys={this.state.keys} press={this.handlePress} release={this.handleRelease}/>
+              </div>
+              <div id="slider">
+                  <Slider/>
+              </div>
+            </div>)
   }
 }
 

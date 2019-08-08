@@ -23,3 +23,15 @@
 }
 .topRight{}
 .topCenter{}
+.slider{
+      -webkit-transform: rotate(90deg);
+      -moz-transform: rotate(90deg);
+      -o-transform: rotate(90deg);
+      -ms-transform: rotate(90deg);
+      transform: rotate(270deg);
+      position:relative;
+      left:75%;
+      top:210px;
+      width:310px;
+      color:#00ff00;
+}
