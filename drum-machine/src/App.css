@@ -30,9 +30,9 @@
       -o-transform: rotate(90deg);
       -ms-transform: rotate(90deg);
       transform: rotate(270deg);
-      position:relative;
+      position:absolute;
       left:75%;
-      top:250px;
+      top:200px;
       width:310px;
       color:#00ff00;
 }
@@ -42,4 +42,14 @@
   text-align: center;
   background:rgb(153, 99, 238);
   padding-top:10px;
+}
+.buttons{
+  -webkit-transform: rotate(90deg);
+  position:relative;
+  left:-30%;
+}
+.button{
+  width:36px;
+  text-align: center;
+  margin-top:5px;
 }
