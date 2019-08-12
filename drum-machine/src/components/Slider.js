@@ -8,8 +8,15 @@ function Slider(props){
   return(<div className="slider">
           <Progress  value={props.volume} color='success'/>
           <div className="buttons container">
-            <Row>
-              <i className='fas fa-volume-up' style={{fontSize:'30px',color:'grey'}}></i>
+            <Row onClick={props.mute}>
+              <i className='fas fa-volume-up volume'
+                 style={{fontSize:'30px',color:'grey'}}
+                 id='unmuted'
+                 ></i>
+               <i  className='fas fa-volume-mute hide volume'
+                  style={{fontSize:'30px',color:'grey'}}
+                  id='muted'
+                ></i>
             </Row>
             <Row>
             <Button className="button increase" onClick={props.changeVolume} id="increment">+</Button>

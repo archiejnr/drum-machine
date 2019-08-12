@@ -101,6 +101,21 @@ handleSound=(e)=>{
   }
   console.log(this.state.volume)
 }
+mute=(e)=>{
+  document.querySelectorAll('.volume').forEach((item)=>{
+    item.classList.toggle('hide')
+  })
+  if(this.state.volume>0){
+    this.setState({
+      volume:0
+    })
+  }
+  else {
+    this.setState({
+      volume:10
+    })
+  }
+}
 
   render(){
     return(<div>
@@ -108,7 +123,7 @@ handleSound=(e)=>{
                   <Drumpad keys={this.state.keys} press={this.playSound}/>
               </div>
               <div id="slider">
-                  <Slider changeVolume={this.handleSound} volume={this.state.volume}/>
+                  <Slider changeVolume={this.handleSound} volume={this.state.volume} mute={this.mute}/>
               </div>
               <div id="display">
                 <Display value={this.state.displayedKey}/>
