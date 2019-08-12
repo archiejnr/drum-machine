@@ -6,16 +6,16 @@ import {Row} from 'reactstrap'
 //componets start here
 function Slider(props){
   return(<div className="slider">
-          <Progress  value="25" color='success'/>
+          <Progress  value={props.volume} color='success'/>
           <div className="buttons container">
             <Row>
               <i className='fas fa-volume-up' style={{fontSize:'30px',color:'grey'}}></i>
             </Row>
             <Row>
-            <Button className="button increase">+</Button>
+            <Button className="button increase" onClick={props.changeVolume} id="increment">+</Button>
             </Row>
             <Row>
-              <Button className="button decrease">-</Button>
+              <Button className="button decrease" onClick={props.changeVolume} id="decrement">-</Button>
             </Row>
           </div>
         </div>)

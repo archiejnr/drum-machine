@@ -73,7 +73,8 @@ class App extends React.Component{
         position:'bottomRight',
         url:'http://s1download-universal-soundbank.com/mp3/sounds/14151.mp3'
       }],
-      displayedKey:null
+      displayedKey:null,
+      volume:10
     }
 //if there are any bindings to be done provided you ddnt use the arrow functions
   }
@@ -87,13 +88,27 @@ displayKey=(e)=>{
     displayedKey:e.target.getAttribute('id')
   })
 }
+handleSound=(e)=>{
+  if (e.target.getAttribute('id')==='decrement'){
+    this.setState({
+      volume: this.state.volume<=0? 0:this.state.volume-10
+    })
+  }
+  else{
+    this.setState({
+      volume: this.state.volume>=100? 100:this.state.volume+10
+    })
+  }
+  console.log(this.state.volume)
+}
+
   render(){
     return(<div>
               <div id="drum" >
                   <Drumpad keys={this.state.keys} press={this.playSound}/>
               </div>
               <div id="slider">
-                  <Slider/>
+                  <Slider changeVolume={this.handleSound} volume={this.state.volume}/>
               </div>
               <div id="display">
                 <Display value={this.state.displayedKey}/>
