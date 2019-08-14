@@ -11,6 +11,7 @@ function Drumkeys(props){
                                       className='drumKey'
                                       id={item.position}
                                       onClick={props.press}
+                                      onKeyDown={props.keyboardPress}
                                       style={{border:'1px solid grey',
                                               borderRadius:'10px',
                                               margin:'2px',

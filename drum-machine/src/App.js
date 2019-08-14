@@ -4,6 +4,8 @@ import Drumpad from './components/Drumpad.js';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Slider from './components/Slider.js';
 import Display from './components/Display.js';
+
+
 //code starts here
 class App extends React.Component{
   constructor(props){
@@ -116,20 +118,34 @@ mute=(e)=>{
     })
   }
 }
+
 handleKeyboard=(e)=>{
-  console.log(e)
+  switch (e.key) {
+    case 'q':console.log('q');
+      break;
+    case 'w': console.log('w');
+      break;
+    case 'e':console.log('e');
+    break;
+    case 'a':console.log('a');
+    default:break;
+  }
 }
+
+  componentDidMount(){
+    document.addEventListener('keydown',this.handleKeyboard)
+  }
 
   render(){
     return(<div>
-              <div id="drum" >
-                  <Drumpad keys={this.state.keys} press={this.playSound}/>
+              <div id="drum">
+                  <Drumpad keys={this.state.keys} press={this.playSound} keyboard={this.handleKeyboard}/>
               </div>
               <div id="slider">
                   <Slider changeVolume={this.handleSound} volume={this.state.volume} mute={this.mute}/>
               </div>
               <div id="display">
-                <Display value={this.state.displayedKey} keyboardPress={this.handleKeyboard}/>
+                <Display value={this.state.displayedKey} />
               </div>
             </div>)
   }
