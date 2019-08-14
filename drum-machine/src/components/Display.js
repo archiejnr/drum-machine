@@ -2,7 +2,7 @@ import React from 'react';
 
 //code starts here
 function Display(props){
-  return( <div>
+  return( <div onKeyPress={props.keyboardPress}>
             {props.value}
           </div>)
 }

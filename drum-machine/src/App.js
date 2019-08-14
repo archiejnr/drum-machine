@@ -116,6 +116,9 @@ mute=(e)=>{
     })
   }
 }
+handleKeyboard=(e)=>{
+  console.log(e)
+}
 
   render(){
     return(<div>
@@ -126,7 +129,7 @@ mute=(e)=>{
                   <Slider changeVolume={this.handleSound} volume={this.state.volume} mute={this.mute}/>
               </div>
               <div id="display">
-                <Display value={this.state.displayedKey}/>
+                <Display value={this.state.displayedKey} keyboardPress={this.handleKeyboard}/>
               </div>
             </div>)
   }
