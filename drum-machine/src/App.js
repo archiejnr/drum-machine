@@ -69,7 +69,7 @@ class App extends React.Component{
         url:'http://dight310.byu.edu/media/audio/FreeLoops.com/5/5/Lil%20Jon%20Sub%20and%20Kick-8238-Free-Loops.com.mp3'
       },{
         id:9,
-        key:"c",
+        key:"C",
         src:"somthing",
         presed:false,
         position:'bottomRight',
@@ -118,16 +118,45 @@ mute=(e)=>{
     })
   }
 }
+keyboardSoundPlayer=(item)=>{
+  const sound=new Audio(item.url);
+  sound.play();
+  this.setState({
+    displayedKey:item.id
+  });
 
+}
 handleKeyboard=(e)=>{
+  let pressed;
   switch (e.key) {
-    case 'q':console.log('q');
+    case 'q':
+      pressed = this.state.keys.filter(item=>item.key===e.key.toUpperCase());
+      this.keyboardSoundPlayer(pressed[0]);
       break;
-    case 'w': console.log('w');
+    case 'w':pressed = this.state.keys.filter(item=>item.key===e.key.toUpperCase());
+      this.keyboardSoundPlayer(pressed[0]);
       break;
-    case 'e':console.log('e');
-    break;
-    case 'a':console.log('a');
+    case 'e':pressed = this.state.keys.filter(item=>item.key===e.key.toUpperCase());
+      this.keyboardSoundPlayer(pressed[0]);
+      break;
+    case 'a':pressed = this.state.keys.filter(item=>item.key===e.key.toUpperCase());
+      this.keyboardSoundPlayer(pressed[0]);
+      break;
+    case 's':pressed = this.state.keys.filter(item=>item.key===e.key.toUpperCase());
+      this.keyboardSoundPlayer(pressed[0]);
+      break;
+    case 'd':pressed = this.state.keys.filter(item=>item.key===e.key.toUpperCase());
+      this.keyboardSoundPlayer(pressed[0]);
+      break;
+    case 'z':pressed = this.state.keys.filter(item=>item.key===e.key.toUpperCase());
+      this.keyboardSoundPlayer(pressed[0]);
+      break;
+    case 'x':pressed = this.state.keys.filter(item=>item.key===e.key.toUpperCase());
+      this.keyboardSoundPlayer(pressed[0]);
+      break;
+    case 'c':pressed = this.state.keys.filter(item=>item.key===e.key.toUpperCase());
+      this.keyboardSoundPlayer(pressed[0]);
+      break;
     default:break;
   }
 }

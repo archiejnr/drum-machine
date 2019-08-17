@@ -6,7 +6,7 @@ import {Col} from 'reactstrap';
 function Drumkeys(props){
   return (props.keys.map((item)=>(<Col
                                       audio={item.url}
-                                      key={item.id}
+                                      key={item.key}
                                       xs='3'
                                       className='drumKey'
                                       id={item.position}
