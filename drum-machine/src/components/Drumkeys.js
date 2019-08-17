@@ -8,7 +8,7 @@ function Drumkeys(props){
                                       audio={item.url}
                                       key={item.key}
                                       xs='3'
-                                      className='drumKey'
+                                      className={`drumKey ${item.pressed}`}
                                       id={item.position}
                                       onClick={props.press}
                                       onKeyDown={props.keyboardPress}
