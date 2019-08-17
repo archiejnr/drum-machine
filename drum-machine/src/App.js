@@ -78,18 +78,21 @@ class App extends React.Component{
       displayedKey:null,
       volume:10
     }
-//if there are any bindings to be done provided you ddnt use the arrow functions
+//if there are any bindings to be done provided you dnt use the arrow functions
   }
+//playing sound from the drumpad keys
 playSound=(e)=>{
     const sound=new Audio(e.target.getAttribute('audio'));
     sound.play();
     this.displayKey(e)
 }
+//displaying keys pressed from the keyboard
 displayKey=(e)=>{
   this.setState({
     displayedKey:e.target.getAttribute('id')
   })
 }
+//for icreasing and decreasing volume levels
 handleSound=(e)=>{
   if (e.target.getAttribute('id')==='decrement'){
     this.setState({
@@ -118,6 +121,7 @@ mute=(e)=>{
     })
   }
 }
+//for keyboard events
 keyboardSoundPlayer=(item)=>{
   const sound=new Audio(item.url);
   sound.play();
@@ -160,7 +164,7 @@ handleKeyboard=(e)=>{
     default:break;
   }
 }
-
+//adding keyboard eventlistener to the document after the UI renders
   componentDidMount(){
     document.addEventListener('keydown',this.handleKeyboard)
   }
