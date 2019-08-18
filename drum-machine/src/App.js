@@ -85,6 +85,7 @@ playSound=(e)=>{
     const sound=new Audio(e.target.getAttribute('audio'));
     sound.play();
     this.displayKey(e)
+    console.log();
 }
 //displaying keys pressed from the keyboard
 displayKey=(e)=>{
@@ -126,45 +127,46 @@ keyboardSoundPlayer=(item)=>{
   const sound=new Audio(item.url);
   sound.play();
   this.setState({
-    displayedKey:item.id
+    displayedKey:item.position
   });
 }
+//callMe function to unpopulate the below handleKeyboard function
+callMe=(e)=>{
+    let pressed;
+    pressed = this.state.keys.filter(item=>item.key===e.key.toUpperCase());
+    this.keyboardSoundPlayer(pressed[0]);
+    document.querySelector(`#${pressed[0].position}`).classList.toggle('keyboardPress');
+    setTimeout(()=>{this.colorChanger(pressed[0])},100)
+}
+
 handleKeyboard=(e)=>{
-  let pressed;
+;
   switch (e.key) {
-    case 'q':
-      pressed = this.state.keys.filter(item=>item.key===e.key.toUpperCase());
-      this.keyboardSoundPlayer(pressed[0]);
+    case 'q':this.callMe(e);
       break;
-    case 'w':pressed = this.state.keys.filter(item=>item.key===e.key.toUpperCase());
-      this.keyboardSoundPlayer(pressed[0]);
+    case 'w':this.callMe(e);
       break;
-    case 'e':pressed = this.state.keys.filter(item=>item.key===e.key.toUpperCase());
-      this.keyboardSoundPlayer(pressed[0]);
+    case 'e':this.callMe(e);
       break;
-    case 'a':pressed = this.state.keys.filter(item=>item.key===e.key.toUpperCase());
-      this.keyboardSoundPlayer(pressed[0]);
+    case 'a':this.callMe(e);
       break;
-    case 's':pressed = this.state.keys.filter(item=>item.key===e.key.toUpperCase());
-      this.keyboardSoundPlayer(pressed[0]);
+    case 's':this.callMe(e);
       break;
-    case 'd':pressed = this.state.keys.filter(item=>item.key===e.key.toUpperCase());
-      this.keyboardSoundPlayer(pressed[0]);
+    case 'd':this.callMe(e);
       break;
-    case 'z':pressed = this.state.keys.filter(item=>item.key===e.key.toUpperCase());
-      this.keyboardSoundPlayer(pressed[0]);
+    case 'z':this.callMe(e);
       break;
-    case 'x':pressed = this.state.keys.filter(item=>item.key===e.key.toUpperCase());
-      this.keyboardSoundPlayer(pressed[0]);
+    case 'x':this.callMe(e);
       break;
-    case 'c':pressed = this.state.keys.filter(item=>item.key===e.key.toUpperCase());
-      this.keyboardSoundPlayer(pressed[0]);
+    case 'c':this.callMe(e);
       break;
     default:break;
   }
 }
 //handle the button color-change on keyboard pressed
-  
+  colorChanger=(x)=>{
+    document.querySelector(`#${x.position}`).classList.toggle('keyboardPress');
+  }
 //adding keyboard eventlistener to the document after the UI renders
   componentDidMount(){
     document.addEventListener('keydown',this.handleKeyboard)
