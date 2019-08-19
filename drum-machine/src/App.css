@@ -3,7 +3,7 @@
   height:100px;
   background:skyblue;
   text-align:center;
-  padding:1.9em;
+  /*padding:1.9em;*/
   cursor: pointer;
   font-weight: bold;
   font-family: monospace;
@@ -73,4 +73,7 @@
 }
 .hidden{
   display:none
+}
+#audioTag{
+  width:100%;
 }

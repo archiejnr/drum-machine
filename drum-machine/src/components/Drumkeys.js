@@ -16,7 +16,7 @@ function Drumkeys(props){
                                               borderRadius:'10px',
                                               margin:'2px',
                                               textAlign:'center'}}>
-                                    {item.key}
+                                              <audio id="audioTag" src={item.url}>{item.key}</audio>
                                     </Col>)))
 }
 export default Drumkeys;
