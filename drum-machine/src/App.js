@@ -171,11 +171,14 @@ handleKeyboard=(e)=>{
   componentDidMount(){
     document.addEventListener('keydown',this.handleKeyboard)
   }
-
+//handle the mod toggler
+toggle=(e)=>{
+  e.target.querySelector('.mod1').classList.toggle('mod1 mod2');
+}
   render(){
     return(<div>
               <div id="drum">
-                  <Drumpad keys={this.state.keys} press={this.playSound} keyboard={this.handleKeyboard}/>
+                  <Drumpad keys={this.state.keys} press={this.playSound} keyboard={this.handleKeyboard} mod={this.toggle}/>
               </div>
               <div id="slider">
                   <Slider changeVolume={this.handleSound} volume={this.state.volume} mute={this.mute}/>

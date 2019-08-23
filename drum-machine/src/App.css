@@ -60,7 +60,7 @@
   background-color:#00ff00;
 }
 #toggler{
-  width:50px;
+  width:100px;
   height:20px;
   background:#000;
   display: inline-flex;
@@ -69,7 +69,13 @@
   width:50%;
   background:red;
   height:100%;
+  float:left;
+}
+.mod2{
   float:right;
+  height:100%;
+  background:purple;
+  width:50%;
 }
 .hidden{
   display:none
