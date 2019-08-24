@@ -13,7 +13,7 @@ function Drumpad(props){
       <Row style={{textAlign:'centre'}} className="mainRow">
         <br/>
         <div id="toggler" onClick={props.mod}>
-          <div className="mod1 toggler moveLeft">
+          <div className="mod1 toggler moveRight">
           </div>
         </div>
       </Row>

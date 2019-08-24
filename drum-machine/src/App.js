@@ -76,7 +76,8 @@ class App extends React.Component{
         url:'http://s1download-universal-soundbank.com/mp3/sounds/14151.mp3'
       }],
       displayedKey:null,
-      volume:10
+      volume:10,
+      phase:true
     }
 //if there are any bindings to be done provided you dnt use the arrow functions
   }
@@ -169,12 +170,22 @@ handleKeyboard=(e)=>{
   }
 //adding keyboard eventlistener to the document after the UI renders
   componentDidMount(){
-    document.addEventListener('keydown',this.handleKeyboard)
+    document.addEventListener('keydown',this.handleKeyboard);
+    document.querySelector('.toggler').innerHTML=this.state.phase;
   }
 //handle the mod toggler
 toggle=(e)=>{
-  e.target.classList.toggle('moveRight');
-  e.target.classList.toggle('moveLeft');
+  if(e.target.getAttribute('id')){
+    e.target.querySelector('.toggler').classList.toggle('moveRight');
+    e.target.querySelector('.toggler').classList.toggle('moveLeft');
+    e.target.querySelector('.toggler').innerHTML=this.state.phase;
+  }
+  else{
+    e.target.classList.toggle('moveRight');
+    e.target.classList.toggle('moveLeft');
+    e.target.innerHTML=this.state.phase;
+  }
+    this.setState({phase:!this.state.phase});
 }
   render(){
     return(<div>
