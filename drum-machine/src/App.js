@@ -175,6 +175,7 @@ handleKeyboard=(e)=>{
   }
 //handle the mod toggler
 toggle=(e)=>{
+      this.setState({phase:!this.state.phase});
   if(e.target.getAttribute('id')){
     e.target.querySelector('.toggler').classList.toggle('moveRight');
     e.target.querySelector('.toggler').classList.toggle('moveLeft');
@@ -185,7 +186,6 @@ toggle=(e)=>{
     e.target.classList.toggle('moveLeft');
     e.target.innerHTML=this.state.phase;
   }
-    this.setState({phase:!this.state.phase});
 }
   render(){
     return(<div>
