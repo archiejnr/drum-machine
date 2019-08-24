@@ -65,21 +65,44 @@
   background:#000;
   display: inline-flex;
 }
-.mod1{
-  width:50%;
-  background:red;
-  height:100%;
-  float:left;
-}
-.mod2{
-  float:right;
-  height:100%;
-  background:purple;
-  width:50%;
-}
 .hidden{
   display:none
 }
 #audioTag{
   width:100%;
+}
+.mainRow{
+  padding-left:35%;
+}
+.animateRight{
+  width:100px;
+  height:100px;
+  background: red;
+  position: relative;
+}
+/*this is for the animations*/
+.mod1{
+  width:50%;
+  background:red;
+  height:100%;
+  float:left;
+  position: relative;
+}
+.moveRight{
+  -webkit-animation: yourmove 1s; /* Safari 4.0 - 8.0 */
+  animation: yourmove 1s;
+  animation-fill-mode: forwards;
+}
+.moveLeft{
+  -webkit-animation: mymove 1s; /* Safari 4.0 - 8.0 */
+  animation: mymove 1s ;
+  animation-fill-mode: forwards;
+}
+@keyframes mymove {
+  from {left: 0px;}
+  to {left: 50px;}
+}
+@keyframes yourmove {
+  from {right: -50px;}
+  to {right: 0px;}
 }

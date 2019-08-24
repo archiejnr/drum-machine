@@ -10,10 +10,10 @@ function Drumpad(props){
       <Row>
         <Drumkeys keys={props.keys} press={props.press} release={props.release} keyboardPress={props.keyboard}/>
       </Row>
-      <Row style={{textAlign:'centre'}}>
+      <Row style={{textAlign:'centre'}} className="mainRow">
         <br/>
-        <div id="toggler" onClick={props.toggle}> 
-          <div className="mod1 toggler">
+        <div id="toggler" onClick={props.mod}>
+          <div className="mod1 toggler moveLeft">
           </div>
         </div>
       </Row>

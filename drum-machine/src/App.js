@@ -173,7 +173,8 @@ handleKeyboard=(e)=>{
   }
 //handle the mod toggler
 toggle=(e)=>{
-  e.target.querySelector('.mod1').classList.toggle('mod1 mod2');
+  e.target.classList.toggle('moveRight');
+  e.target.classList.toggle('moveLeft');
 }
   render(){
     return(<div>
