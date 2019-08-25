@@ -85,7 +85,7 @@
 /*this is for the animations*/
 .mod1{
   width:50%;
-  background:red;
+  background:skyblue;
   height:100%;
   float:left;
   position: relative;
@@ -113,5 +113,9 @@
 body{
   padding:50px;
   background:#f7dbff;
-
+}
+.text{
+  padding:2px;
+  font-weight: bold;
+  color:red;
 }
